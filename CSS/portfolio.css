@@ -1,163 +1,320 @@
-*{
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-body{
-    height: 100vh;
-    width: 100%;
-    background-color: black;
-    color: white;
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
-#navContainer{
-    height: 40rem;
-    width: 100%;
-    background-image: url(portfolio.jpg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+
+/* Header */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
 }
-nav{
+
+#navContainer {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-around;
+    padding: 0 2rem;
     flex-wrap: wrap;
 }
-nav ul li{
-    display: inline-block;
-    margin: 10px 144px;
-}
-nav ul li a{
-    text-decoration: none;
-    color: white;
-}
-.header-text{
-    margin-top: 20%;
-    margin-left: 50px;
-}
-#about{
+
+.navbar {
+    list-style: none;
     display: flex;
-    justify-content: space-between;
+    gap: 1rem;
 }
-#about img{
-    height: 15rem;
-    width: 30rem;
-    margin: 5%;
-    border-radius: 5%;
+
+.navbar .nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
 }
-#about img:hover{
-    transform: translateY(1rem);
+
+.navbar .nav-link:hover {
+    color: burlywood;
 }
-#about .container h1{
-    margin-top: 10%;
-    margin-left: 50px;
+
+.header-text {
+    text-align: center;
+    margin-top: 1rem;
 }
-#about .container p{
-    margin: 5px 50px;
+
+header h1 span {
+    color: burlywood;
 }
-#contactDiv .container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 40px;
-    margin-top: 30px;
-    height: 20rem;
+
+/* About Section */
+#about {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    gap: 1rem;
+    align-items: center;
+}
+
+#about img {
+    width: 300px;
+    border-radius: 50%;
+}
+
+#about .container {
+    max-width: 600px;
+}
+
+/* Services Section */
+#service {
+    padding: 2rem;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+#service .cnt {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#service .cnt div {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    max-width: 300px;
+    text-align: left;
+}
+
+#service .cnt div a {
+    text-decoration: none;
+    color: burlywood;
+    transition: color 0.3s;
+}
+
+#service .cnt div a:hover {
+    color: #333;
+}
+
+/* Contact Section */
+#contactDiv {
+    padding: 2rem;
+    background: #f4f4f4;
+}
+
+#contactDiv .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-around;
+}
+
+#contactDiv input,
+#contactDiv textarea {
     width: 100%;
-    margin: 10px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
 }
-#contactDiv .container1 h1{
-    margin: 10px;
+
+#contactDiv button {
+    padding: 0.5rem 1rem;
+    background: burlywood;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
 }
-#contactDiv .container1 input{
-    margin-left: 10px;
+
+#contactDiv button:hover {
+    background: #333;
 }
-#contactDiv .container1 textarea{
-    margin-left: 10px;
-    width: 10.5rem
+
+#contactDiv .container2 button a {
+    text-decoration: none;
+    color: #fff;
 }
-#contactDiv .container1 button{
-    margin-left: 60px;
-    height: 20%;
-    width: 10%
-}
-#contactDiv .container1 button:hover{
-    background-color: rgb(245, 45, 45);
-    color: white;
-}
-#contactDiv .container2{
-    margin: 50px;
-}
+
 #contactDiv .container2 h3 a{
     text-decoration: none;
-    color: white;
-    margin: 10px;
+    color: burlywood;
 }
-#contactDiv .container2 p{
-    margin: 10px
+
+#contactDiv .container2 h3,
+#contactDiv .container2 p {
+    margin-bottom: 1rem;
 }
-#contactDiv .container2 button{
-    margin-left: 10px;
-}
-#contactDiv .container2 button a{
-    text-decoration: none;
-    color: black;
-}
-#contactDiv .container2 button a:hover{
-    background-color: rgb(240, 55, 55);
-    color: white;
-}
-#service{
-    padding: 30px 0;
-    display: inline;
-    align-items: center;
-    justify-content: space-between;
-}
-#service .container .cnt{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 40px;
-    margin-top: 30px;
-}
-#service .container h1{
+
+/* Footer */
+.footer {
+    background: #333;
+    color: #fff;
     text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
 }
-#service .container .cnt .cnt1{
-    width: 400px;
-    height: 200px;
-    border-radius: 5px;
+
+/* Media Queries for Responsiveness */
+
+/* Mobile Devices (up to 480px) */
+@media (max-width: 480px) {
+    #navContainer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+        width: 100%;
+        text-align: left;
+        gap: 0.5rem;
+    }
+
+    #about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #about img {
+        width: 200px;
+    }
+
+    #about .container {
+        max-width: 100%;
+    }
+
+    #service .cnt {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    #service .cnt div {
+        max-width: 100%;
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    #contactDiv .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    #contactDiv .container2 button{
+        margin: 10px;
+    }
+
+    #contactDiv input,
+    #contactDiv textarea {
+        width: 90%;
+    }
+
+    .footer {
+        padding: 1rem;
+    }
 }
-#service .container .cnt .cnt1:hover{
-    background-color: rgb(250, 65, 65);
+
+/* Tablet Devices (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    #navContainer {
+        padding: 1rem;
+    }
+
+    .navbar {
+        gap: 1rem;
+    }
+
+    #about {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #about img {
+        width: 250px;
+    }
+
+    #service .cnt {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #service .cnt div {
+        max-width: 45%;
+    }
+
+    #contactDiv .container {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    #contactDiv input, #contactDiv textarea {
+        width: 50%;
+    }
+
+    #contactDiv .container1 #Contactform input{
+        width: 100%;
+    }
+
+    #contactDiv .container1 #Contactform textarea{
+        width: 100%;
+    }
+
+    .footer {
+        padding: 1.5rem;
+    }
 }
-#service .container .cnt .cnt2{
-    width: 400px;
-    height: 200px;
-    border-radius: 5px
-}
-#service .container .cnt .cnt2:hover{
-    background-color: rgb(250, 65, 65);
-}
-#service .container .cnt .cnt3{
-    width: 400px;
-    height: 200px;
-    border-radius: 5px
-}
-#service .container .cnt .cnt3:hover{
-    background-color: rgb(250, 65, 65);
-}
-#service .container h2{
-    font-size: 25px;   
-    margin: 15px;
-    text-align: center;
-}
-#service .container p{
-    margin: 15px;
-}
-#service .container .cnt a{
-    text-decoration: none;
-    color: white;
-    margin: 20px 20px;
-}
-.footer{
-    height: 50px;
-    background-color: rgb(245, 45, 45);
-    text-align: center;
+
+/* Desktop Devices (769px and up) */
+@media (min-width: 769px) {
+    #navContainer {
+        padding: 2rem;
+    }
+
+    .navbar {
+        gap: 1rem;
+    }
+
+    #about {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #about img {
+        width: 300px;
+    }
+
+    #service .cnt {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #service .cnt div {
+        max-width: 300px;
+    }
+
+    #contactDiv .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #contactDiv input, #contactDiv textarea {
+        width: 60%;
+    }
+
+    #contactDiv .container1 #Contactform input{
+        width: 100%;
+    }
+
+    #contactDiv .container1 #Contactform textarea{
+        width: 100%;
+    }
+
+    .footer {
+        padding: 2rem;
+    }
 }
